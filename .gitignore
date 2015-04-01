@@ -1,0 +1,14 @@
+#ignore this
+node_modules/*
+bower.json
+Dockerfile
+fig.yml
+generate-ssl-certs.sh
+gruntfile.js
+karma.conf.js
+LICENSE.md
+npm-debug.log
+Procfile
+README.md
+
+
