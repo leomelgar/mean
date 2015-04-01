@@ -1,6 +1,6 @@
 <section data-ng-controller="PersonasController">
     <div class="page-header">
-        <h1>New Persona</h1>
+        <h1>Crear Persona</h1>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
@@ -15,6 +15,12 @@
                     <label class="control-label" for="apellido">Apellido</label>
                     <div class="controls">
                         <input type="text" data-ng-model="apellido" id="apellido" class="form-control" placeholder="apellido" required>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="control-label" for="doc">Documento</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="doc" id="doc" class="form-control" placeholder="nro documento" required>
                     </div>
                 </div>
                 <div class="form-group">

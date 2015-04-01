@@ -2,6 +2,7 @@
 	<div class="page-header">
 		<h2 data-ng-bind="persona.name"></h2>
 		<h2 data-ng-bind="persona.apellido"></h2>
+		<h2 data-ng-bind="persona.doc"></h2>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == persona.user._id))">
 		<a class="btn btn-primary" href="/#!/personas/{{persona._id}}/edit">

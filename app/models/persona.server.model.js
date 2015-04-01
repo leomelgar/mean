@@ -13,13 +13,19 @@ var PersonaSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Persona name',
+		required: 'Se necesita un nombre',
 		trim: true
 	},
 	apellido:{
 		type: String,
 		default: '',
-		required: 'Please fill Persona name',
+		required: 'se necesita un apellido',
+		trim: true
+	},
+	doc:{
+		type: String,
+		default: '',
+		required: 'se requiere un nro de dni',
 		trim: true
 	},
 	created: {

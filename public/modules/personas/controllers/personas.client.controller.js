@@ -10,7 +10,8 @@ angular.module('personas').controller('PersonasController', ['$scope', '$statePa
 			// Create new Persona object
 			var persona = new Personas ({
 				name: this.name,
-				apellido: this.apellido
+				apellido: this.apellido,
+				doc: this.doc
 			});
 
 			// Redirect after save
@@ -20,6 +21,7 @@ angular.module('personas').controller('PersonasController', ['$scope', '$statePa
 				// Clear form fields
 				$scope.name = '';
 				$scope.apellido = '';
+				$scope.doc = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
