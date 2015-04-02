@@ -1,6 +1,5 @@
 #ignore this
 node_modules/*
-bower.json
 Dockerfile
 fig.yml
 generate-ssl-certs.sh
