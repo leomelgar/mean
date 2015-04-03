@@ -1,35 +1,45 @@
-<section data-ng-controller="PersonasController">
-    <div class="page-header">
-        <h1>Crear Persona</h1>
+<div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+      <li><a href="/#!/personas">Personas</a></li>
+      <li class="active"><a href="/#!/personas/create">Nueva Persona<span class="sr-only">(current)</span></a></li>
+    </ul>
+  </div>
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">        
+        <section data-ng-controller="PersonasController">
+            <div class="page-header">
+                <h1>Crear Persona</h1>
+            </div>
+            <div class="col-md-12">
+                <form class="form-horizontal" data-ng-submit="create()" novalidate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Name</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="apellido">Apellido</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="apellido" id="apellido" class="form-control" placeholder="apellido" required>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="control-label" for="doc">Documento</label>
+                            <div class="controls">
+                                <input type="text" data-ng-model="doc" id="doc" class="form-control" placeholder="nro documento" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-default">
+                        </div>
+        				<div data-ng-show="error" class="text-danger">
+        					<strong data-ng-bind="error"></strong>
+        				</div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
     </div>
-    <div class="col-md-12">
-        <form class="form-horizontal" data-ng-submit="create()" novalidate>
-            <fieldset>
-                <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="apellido">Apellido</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="apellido" id="apellido" class="form-control" placeholder="apellido" required>
-                    </div>
-                </div>
-                 <div class="form-group">
-                    <label class="control-label" for="doc">Documento</label>
-                    <div class="controls">
-                        <input type="text" data-ng-model="doc" id="doc" class="form-control" placeholder="nro documento" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default">
-                </div>
-				<div data-ng-show="error" class="text-danger">
-					<strong data-ng-bind="error"></strong>
-				</div>
-            </fieldset>
-        </form>
-    </div>
-</section>
+</div>
