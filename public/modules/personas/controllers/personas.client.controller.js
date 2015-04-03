@@ -1,9 +1,27 @@
 'use strict';
 
 // Personas controller
-angular.module('personas').controller('PersonasController', ['$scope', '$stateParams', '$location', 'Authentication', 'Personas',
-	function($scope, $stateParams, $location, Authentication, Personas) {
+angular.module('personas').controller('PersonasController', ['$scope', '$stateParams', '$location', 'Authentication', 'Personas', 'ngTableParams',
+	function($scope, $stateParams, $location, Authentication, Personas, ngTableParams) {
 		$scope.authentication = Authentication;
+
+		var params = {
+		   page: 1,
+		   count: 5
+		};
+
+		var settings = {
+		   total: 0,
+		   counts: [5, 10, 15],
+		   getData: function($defer, params) {
+		      Personas.get(params.url(), function(response) {
+		         params.total(response.total);
+		         $defer.resolve(response.results);
+		      });
+		   }
+		};
+
+$scope.tableParams = new ngTableParams(params, settings);
 
 		// Create new Persona
 		$scope.create = function() {
