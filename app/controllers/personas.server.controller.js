@@ -72,17 +72,17 @@ exports.delete = function(req, res) {
 /**
  * List of Personas
  */
-// exports.list = function(req, res) { 
-// 	Persona.find().sort('apellido').populate('user', 'displayName').exec(function(err, personas) {
-// 		if (err) {
-// 			return res.status(400).send({
-// 				message: errorHandler.getErrorMessage(err)
-// 			});
-// 		} else {
-// 			res.jsonp(personas);
-// 		}
-// 	});
-// };
+/*exports.list = function(req, res) { 
+	Persona.find().sort('apellido').populate('user', 'displayName').exec(function(err, personas) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(personas);
+		}
+	});
+};*/
 /**
  * List of Personas
  */
@@ -106,7 +106,7 @@ exports.list = function(req, res) {
 
 	var sort = {
 		sort: {
-			desc: 'apellido'
+			asc: 'apellido'
 		}
 	};
 
