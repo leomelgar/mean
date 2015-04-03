@@ -19,30 +19,53 @@
     	No existen pacientes cargados <a href="/#!/personas/create">cargue un Paciente!</a>?
     </div>
 </section> -->
-
-<section data-ng-controller="PersonasController" data-ng-init="find()">
-    <div class="page-header">
-        <h1>Personas</h1>
-    </div>
-       <table class="table table-hover " ng-table>
-           <tr>
-               <th>Nombre</th>
-               <th>Apellido</th>
-               <th>Documento</th>
-           </tr>
-           <tr data-ng-repeat="persona in personas">
-               <td>{{persona.name}}</td>
-               <td>{{persona.apellido}}</td>
-               <td>{{persona.doc}}</td>
-               <td>
-                  <div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == persona.user._id))">
-                    <a class="btn btn-primary" href="/#!/personas/{{persona._id}}/edit"><i class="glyphicon glyphicon-edit"></i></a>
-                    <a class="btn btn-primary" data-ng-click="remove();"><i class="glyphicon glyphicon-trash"></i></a>
-                  </div>            
-                </td>
-           </tr>
-       </table>
-    <div class="alert alert-warning text-center" data-ng-hide="!personas.$resolved || personas.length">
-        No existen pacientes cargados <a href="/#!/personas/create">cargue un Paciente!</a>?
-    </div>
-</section>
+<div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+      <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="#">Analytics</a></li>
+      <li><a href="#">Export</a></li>
+    </ul>
+    <ul class="nav nav-sidebar">
+      <li><a href="">Nav item</a></li>
+      <li><a href="">Nav item again</a></li>
+      <li><a href="">One more nav</a></li>
+      <li><a href="">Another nav item</a></li>
+      <li><a href="">More navigation</a></li>
+    </ul>
+    <ul class="nav nav-sidebar">
+      <li><a href="">Nav item again</a></li>
+      <li><a href="">One more nav</a></li>
+      <li><a href="">Another nav item</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <section data-ng-controller="PersonasController" data-ng-init="find()">
+        <div class="page-header">
+            <h1>Personas</h1>
+        </div>
+           <table class="table table-hover" ng-table>
+               <tr>
+                   <th>Nombre</th>
+                   <th>Apellido</th>
+                   <th>Documento</th>
+               </tr>
+               <tr data-ng-repeat="persona in personas">
+                   <td>{{persona.name}}</td>
+                   <td>{{persona.apellido}}</td>
+                   <td>{{persona.doc}}</td>
+                   <td>
+                      <div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == persona.user._id))">
+                        <a class="btn btn-primary" title="Editar" href="/#!/personas/{{persona._id}}/edit" ><i class="glyphicon glyphicon-edit"></i></a>
+                        <a class="btn btn-primary" title="Eliminar" data-ng-click="remove();"><i class="glyphicon glyphicon-trash"></i></a>
+                      </div>            
+                    </td>
+               </tr>
+           </table>
+        <div class="alert alert-warning text-center" data-ng-hide="!personas.$resolved || personas.length">
+            No existen pacientes cargados <a href="/#!/personas/create">cargue un Paciente!</a>?
+        </div>
+    </section>
+  </div>
+</div>
